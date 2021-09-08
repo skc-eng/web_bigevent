@@ -10,8 +10,8 @@ $(function () {
         }
         options.complete = function (res) {
             // console.log(res);
-            if (res.responseJSON.status == 1 && res.responseJSON.message == "身份认证失败！") {
-                console.log('失败了');
+            if (res.responseJSON.status == 1 || res.responseJSON.message == "身份认证失败！") {
+                console.log(res.message);
                 location.href = '/login.html'
             }
         }
